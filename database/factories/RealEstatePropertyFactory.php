@@ -17,7 +17,7 @@ class RealEstatePropertyFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->words(3, true),
 			'real_estate_type' => $this->faker->randomElement(['House', 'Department', 'Land', 'Commercial_Ground']),
 			'street' => $this->faker->address(),
 			'external_number' => $this->faker->text(12),
