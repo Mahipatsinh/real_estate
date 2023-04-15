@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "b7f20acd-b5eb-46a2-ad93-418f75719aff",
+		"name": "Real Estate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Properties",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}real-estate",
+					"host": [
+						"{{base_url}}real-estate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Property",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}real-estate/view/26",
+					"host": [
+						"{{base_url}}real-estate"
+					],
+					"path": [
+						"view",
+						"26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Property",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Property {{property_sequence}}\",\r\n    \"real_estate_type\": \"Department\",\r\n    \"street\": \"Street {{property_sequence}}\",\r\n    \"external_number\": \"EXT-{{property_sequence}}\",\r\n    \"internal_number\": \"INT-{{property_sequence}}\",\r\n    \"neighborhood\": \"neighborhood {{property_sequence}}\",\r\n    \"city\": \"Alaska\",\r\n    \"country\": \"us\",\r\n    \"rooms\": 2,\r\n    \"bathrooms\": 1,\r\n    \"comments\": \"Comments Text {{property_sequence}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}real-estate/add",
+					"host": [
+						"{{base_url}}real-estate"
+					],
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Property",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 26,\r\n    \"name\": \"Property 1\",\r\n    \"real_estate_type\": \"House\",\r\n    \"street\": \"Street 1\",\r\n    \"external_number\": \"EXT-1\",\r\n    \"internal_number\": \"INT-1\",\r\n    \"neighborhood\": \"neighborhood 1\",\r\n    \"city\": \"Delhi\",\r\n    \"country\": \"IN\",\r\n    \"rooms\": 2,\r\n    \"bathrooms\": 1.5,\r\n    \"comments\": \"Comments Text 1\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}real-estate/edit",
+					"host": [
+						"{{base_url}}real-estate"
+					],
+					"path": [
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Property",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 26\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}real-estate/delete",
+					"host": [
+						"{{base_url}}real-estate"
+					],
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
